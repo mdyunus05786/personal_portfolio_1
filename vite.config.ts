@@ -4,6 +4,7 @@
   import path from 'path';
 
   export default defineConfig({
+    base: process.env.GITHUB_PAGES === 'true' ? '/personal_portfolio_1/' : '/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
