@@ -112,7 +112,7 @@ export function ExperienceRoadmap() {
           observer.disconnect();
         }
       },
-      { threshold: 0.25 }
+      { threshold: 0.2 }
     );
 
     observer.observe(target);

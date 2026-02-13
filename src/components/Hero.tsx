@@ -180,7 +180,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
             >
-              Full Stack Developer & Designer
+              Growing every day, giving every step
             </motion.p>
             <motion.p 
               className="hero-body"
@@ -188,8 +188,7 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.8 }}
             >
-              I create beautiful, functional websites and applications that make a difference. 
-              Passionate about clean code and user experience.
+              Aspiring entrepreneur committed to continuous growth, purpose driven innovation, and creating meaningful impact while giving back to the community.
             </motion.p>
             <motion.div 
               className="hero-stats"
@@ -228,7 +227,7 @@ export function Hero() {
                 <Linkedin size={24} />
               </motion.a>
               <motion.a 
-                href="mailto:your@email.com" 
+                href="mailto:yunu9297@stthomas.edu" 
                 className="hero-link"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
