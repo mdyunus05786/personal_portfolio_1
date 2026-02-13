@@ -250,7 +250,7 @@ export function Hero() {
               transition={{ duration: 0.3 }}
             >
               <ImageWithFallback
-                src="/Profile_pic.png"
+                src={`${import.meta.env.BASE_URL}Profile_pic.png`}
                 alt="Profile"
                 className="profile-photo"
               />

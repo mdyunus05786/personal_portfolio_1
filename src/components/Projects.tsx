@@ -5,7 +5,7 @@ const projects = [
   {
     title: 'EVBuddy Homepage',
     description: 'EV charging digital infrastructure homepage that allows users to access EV chargers around them through their mobile device.',
-    image: '/ev_homepage.png',
+    image: `${import.meta.env.BASE_URL}ev_homepage.png`,
     tags: ['React', 'UI/UX', 'Mobile-First'],
     github: 'https://github.com/mdyunus05786/Ev_Buddy_HomePage',
     live: 'https://mdyunus05786.github.io/Ev_Buddy_HomePage/'
@@ -13,7 +13,7 @@ const projects = [
   {
     title: 'Stateless Authentication Architecture',
     description: 'Secure authentication system implementing stateless architecture with JWT tokens and best security practices.',
-    image: '/authentication_pic.jpg',
+    image: `${import.meta.env.BASE_URL}authentication_pic.jpg`,
     tags: ['Authentication', 'Security', 'JWT'],
     github: 'https://github.com/mdyunus05786/Stateless-Authentication-Architecture',
     live: ''
@@ -21,7 +21,7 @@ const projects = [
   {
     title: 'Hub Space',
     description: 'Time management platform to organize schedules and track productivity. Features intuitive interfaces for planning daily activities and setting priorities. Built to streamline workflow and enhance time utilization.',
-    image: '/Hubspace.png',
+    image: `${import.meta.env.BASE_URL}Hubspace.png`,
     tags: ['React', 'Collaboration', 'Web App'],
     github: 'https://github.com/mdyunus05786/Hub_space',
     live: ''
@@ -91,8 +91,8 @@ function ProjectCard({ project }: { project: typeof projects[0] }) {
 }
 
 function ProjectImage({ query, alt }: { query: string; alt: string }) {
-  // If query starts with '/', it's a direct path to an image in public folder
-  if (query.startsWith('/')) {
+  // If query contains BASE_URL or starts with '/', it's a direct path to an image
+  if (query.includes(import.meta.env.BASE_URL) || query.startsWith('/')) {
     return (
       <img 
         src={query} 
