@@ -15,7 +15,7 @@ export function Navigation() {
       <div className="nav-inner">
         <div className="nav-row">
           <img
-            src="/Signature.png"
+            src={`${import.meta.env.BASE_URL}Signature.png`}
             alt="Signature"
             className="nav-logo"
             style={{
