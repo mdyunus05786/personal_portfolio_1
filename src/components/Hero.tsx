@@ -115,6 +115,21 @@ function RadialProgress({
 }
 
 export function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640);
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const progressSize = isMobile ? 90 : 120;
+  const progressStroke = isMobile ? 10 : 12;
+
   return (
     <section id="home" className="hero">
       {/* Animated Background Elements */}
@@ -190,15 +205,38 @@ export function Hero() {
             >
               Aspiring entrepreneur committed to continuous growth, purpose driven innovation, and creating meaningful impact while giving back to the community.
             </motion.p>
+            
+            {/* Simple stats for mobile */}
+            <motion.div 
+              className="hero-stats-simple"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 0.8 }}
+            >
+              <div className="stat-item">
+                <div className="stat-value">100+</div>
+                <div className="stat-label">Projects done</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-value">2+</div>
+                <div className="stat-label">Internships</div>
+              </div>
+              <div className="stat-item">
+                <div className="stat-value">1.5 yrs</div>
+                <div className="stat-label">Industry experience</div>
+              </div>
+            </motion.div>
+
+            {/* Radial progress for larger screens */}
             <motion.div 
               className="hero-stats"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
             >
-              <RadialProgress percent={90} value="100+" label="Project done" duration={2800} />
-              <RadialProgress percent={60} value="2+" label="Internships" duration={2800} />
-              <RadialProgress percent={75} value="1.5 yrs" label="Industry experience" duration={2800} />
+              <RadialProgress percent={90} value="100+" label="Project done" duration={2800} size={progressSize} stroke={progressStroke} />
+              <RadialProgress percent={60} value="2+" label="Internships" duration={2800} size={progressSize} stroke={progressStroke} />
+              <RadialProgress percent={75} value="1.5 yrs" label="Industry experience" duration={2800} size={progressSize} stroke={progressStroke} />
             </motion.div>
             <motion.div 
               className="hero-links"
@@ -245,7 +283,7 @@ export function Hero() {
             transition={{ delay: 0.3, duration: 1, ease: "easeOut" }}
           >
             <motion.div
-              className="hero-photo-wrap"
+              className="profile-wrapper"
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
