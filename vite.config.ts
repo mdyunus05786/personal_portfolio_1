@@ -3,8 +3,10 @@
   import react from '@vitejs/plugin-react-swc';
   import path from 'path';
 
-  export default defineConfig({
-    base: '/',
+  export default defineConfig(({ mode }) => {
+    const base = mode === 'production' ? '/personal_portfolio_1/' : '/';
+    return {
+    base,
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
@@ -58,4 +60,5 @@
       port: 3000,
       open: true,
     },
+  };
   });
