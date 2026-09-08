@@ -65,16 +65,6 @@ const experienceData: RoadmapItem[] = [
     description: 'Demonstrated leadership commitment through effective team management and communication, coordinating club activities and fostering collaboration among members.',
     skills: ['Leadership', 'Team Management', 'Communication', 'Commitment'],
   },
-  {
-    id: '6',
-    type: 'achievement',
-    title: 'Member of Debate Club',
-    organization: 'University of St. Thomas',
-    location: 'Minnesota, USA',
-    date: 'December 2025 - Current',
-    description: 'Developed advanced communication skills, stress management techniques, rational thinking, and influential communication through active participation in competitive debates and club activities.',
-    skills: ['Communication', 'Stress Management', 'Rational Thinking', 'Influential Communication'],
-  },
 ];
 
 const iconMap: Record<RoadmapType, JSX.Element> = {
